@@ -14,3 +14,15 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+canvas {
+  border: 2px solid dodgerblue;
+}
+
+.toolbox {
+  background-color: dodgerblue;
+  border: 1px solid steelblue;
+  display: flex;
+  width: 804px;
+  padding: 1rem;
+}
