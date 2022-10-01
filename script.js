@@ -5,8 +5,17 @@ const ctx = canvas.getContext("2d");
 let size = 20;
 let color = "black";
 
+let isPressed = false;
+
 let x; // main axis x
 let y; // cross axis y
+
+canvas.addEventListener("mousedown", (e) => {
+  isPressed = true;
+  x = e.offsetX;
+  y = e.offsetY;
+  console.log(isPressed, x, y);
+});
 
 function drawCircle(x, y) {
   ctx.beginPath();
