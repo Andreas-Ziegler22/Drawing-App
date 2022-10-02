@@ -2,7 +2,9 @@
 const canvas = document.getElementById("canvas");
 const colorEL = document.getElementById("color");
 const increaseBtn = document.getElementById("increase");
+const decreaseBtn = document.getElementById("decrease");
 const sizeEL = document.getElementById("size");
+const clearEL = document.getElementById("clear");
 
 const ctx = canvas.getContext("2d");
 
@@ -68,4 +70,17 @@ increaseBtn.addEventListener("click", () => {
   updateSizeOnScreen();
 });
 
+decreaseBtn.addEventListener("click", () => {
+  size -= 5;
+  if (size < 5) {
+    size = 5;
+  }
+
+  updateSizeOnScreen();
+});
+
 colorEL.addEventListener("change", (e) => (color = e.target.value));
+
+clearEL.addEventListener("click", () =>
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+);
