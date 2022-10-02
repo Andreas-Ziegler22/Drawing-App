@@ -1,10 +1,12 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 const canvas = document.getElementById("canvas");
 const colorEL = document.getElementById("color");
+const increaseBtn = document.getElementById("increase");
+const sizeEL = document.getElementById("size");
 
 const ctx = canvas.getContext("2d");
 
-let size = 20;
+let size = 10;
 let color = "black";
 
 let isPressed = false;
@@ -53,4 +55,17 @@ function drawLine(x1, y1, x2, y2) {
   ctx.lineWidth = size * 2;
   ctx.stroke();
 }
+function updateSizeOnScreen() {
+  sizeEL.innerText = size;
+}
+
+increaseBtn.addEventListener("click", () => {
+  size += 5;
+  if (size > 50) {
+    size = 50;
+  }
+  //console.log(increaseBtn);
+  updateSizeOnScreen();
+});
+
 colorEL.addEventListener("change", (e) => (color = e.target.value));
