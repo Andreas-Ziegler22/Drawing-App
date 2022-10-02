@@ -9,7 +9,8 @@ const clearEL = document.getElementById("clear");
 const ctx = canvas.getContext("2d");
 
 let size = 10;
-let color = "black";
+let color = colorEL.value;
+colorEL.value = black;
 
 let isPressed = false;
 
